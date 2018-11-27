@@ -1,9 +1,9 @@
 [user]
-  name = GITHUBFULLNAME
-  email = GITHUBEMAIL
+  name = Donovan Young
+  email = dyoung522@gmail.com
 [github]
   # https://github.com/blog/180-local-github-config
-  user = GITHUBUSER
+  user = dyoung522
 [color]
 # ui = true is a superset of all the more specific color options
 #  as documented at http://book.git-scm.com/5_customizing_git.html
@@ -59,6 +59,20 @@
   # new standard to replace the deprecated git-up gem package:
   up = pull --rebase --autostash
 
+  #list commands
+  le = log --oneline --decorate
+  ll = log --pretty=format:"%C(yellow)%h%C(red)%d\\ %C(reset)%s%C(blue)\\ [%cn]" --decorate --numstat
+  ls = log --pretty=format:"%C(green)%h\\ %C(yellow)[%ad]%C(red)%d\\ %C(reset)%s%C(blue)\\ [%cn]" --decorate --date=relative
+  ls1 = log --pretty=format:"%C(yellow)%h%C(red)%d\\ %C(reset)%s%C(blue)\\ [%cn]" --decorate
+  lds = log --pretty=format:"%C(yellow)%h\\ %C(green)%ad%C(red)%d\\ %C(reset)%s%C(blue)\\ [%cn]" --decorate --date=short --graph
+  lh = "!f() { git ls | head -n${1:-25}; }; f"
+  lc = "!f() { git ll "$1"^.."$1"; }; f"
+  lol = log --graph --decorate --pretty=oneline --abbrev-commit --all
+  lnc = log --pretty=format:"%h\\ %s\\ [%cn]"
+  lnm = log --pretty=format:"%C(yellow)%h\\ %C(reset)%s\\ %C(blue)[%cn]" --cherry --no-merges ^HEAD
+  lcp = log --pretty=format:"%C(yellow)%h\\ %C(reset)%s\\ %C(blue)[%cn]" --cherry ^HEAD
+  lmo = log --pretty=format:"%s"
+
   # least used
   br = branch -a
   s = status -s -u
@@ -110,7 +124,7 @@
   # te2 RESULT: without slash: zero=A one=B two=C
   st = status
   l = log --stat -C
-  ll = log --stat -C -3
+  # ll = log --stat -C -3
   servehere = daemon --verbose --informative-errors --reuseaddr --export-all --base-path=. --enable=receive-pack
   purgeme = !git clean -fd && git reset --hard
   prunenow = gc --prune=now
