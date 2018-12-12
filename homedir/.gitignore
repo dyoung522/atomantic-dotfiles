@@ -19,6 +19,16 @@ Network Trash Folder
 Temporary Items
 .apdisk
 
+# IDE files
+.idea
+.vscode
+
+# ENV Files
+.env
+*.iml
+.ruby-version
+.nvmrc
+
 ############
 # Security #
 ############

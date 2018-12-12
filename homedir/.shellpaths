@@ -1,4 +1,5 @@
 #My Scripts
+export PATH=~/bin:$PATH
 export PATH=$PATH:.
 #export PATH=$PATH:~/.dotfiles/scripts
 
